@@ -1,0 +1,15 @@
+
+.footer-container {
+  width: 100%;
+  background-color: #e5e5cb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.footer-content h4 {
+  padding-top: 10px;
+  text-align: center;
+  color: rgb(124, 122, 122);
+  
+}

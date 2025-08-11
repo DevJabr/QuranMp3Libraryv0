@@ -1,0 +1,37 @@
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a120b;
+  padding: 0 2rem;
+}
+.nav img {
+  transition: all 0.9s;
+  cursor: pointer;
+}
+.nav img:active {
+  padding: 5px;
+}
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+button {
+  background-color: initial;
+  font-size: 22px;
+  color: #ffffff;
+  border: 0;
+  cursor: pointer;
+}
+.fa-solid {
+  margin: 15px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.fa-solid:hover {
+  color: gold;
+}
