@@ -80,6 +80,29 @@
 .recorded button:hover {
   color: #d5cea3;
   background-color: black;
+} /* هواتف صغيرة أقل من 480px */
+@media (max-width: 479px) {
+  .website-title {
+    margin-top: -3rem;
+  }
+  .website-title h1 {
+    font-size: 2rem;
+  }
+  .website-title p {
+    font-size: 1.2rem;
+    margin-top: -1rem;
+    padding: 0.5rem;
+  }
+  .reciting {
+    margin-top: -1rem;
+  }
+  .reciting h1 {
+    font-size: 1.5rem;
+  }
+  .reciting button {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
 /* هواتف عادية 480px - 767px */
