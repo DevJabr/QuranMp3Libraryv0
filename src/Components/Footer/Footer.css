@@ -17,8 +17,3 @@
   font-size: 20px;
 }
 
-@media (max-width: 479px) {
-  .footer-container{
-    width: 100vh;
-  }
-}

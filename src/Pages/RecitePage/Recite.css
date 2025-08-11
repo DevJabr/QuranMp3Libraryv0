@@ -87,7 +87,7 @@ li button:hover {
 /* شاشات صغيرة جدًا أقل من 480px */
 @media (max-width: 479px) {
   .page-container {
-    width: 100vh;
+    width: 100%;
   }
   .recitations h1 {
     font-size: 30px;
