@@ -20,9 +20,9 @@ const Content = () => {
           style={{
             borderRadius: 10,
             padding: 20,
-            width: 400,
+            width: 365,
             backgroundColor: "#e8e6deff",
-          }}
+           }}
         />
         <div className="recorded">
           <h1>التسجيلات الصوتية</h1>
