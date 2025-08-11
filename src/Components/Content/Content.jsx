@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Content.css";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import { Link } from "react-router";
+import { Routes, Route, Link } from "react-router-dom";
 
 const Content = () => {
   return (
@@ -20,7 +20,7 @@ const Content = () => {
           style={{
             borderRadius: 10,
             padding: 20,
-            width: 500,
+            width: 400,
             backgroundColor: "#e8e6deff",
           }}
         />

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, Suspense, lazy } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import "./Recite.css";
 
 // استيراد مشغل الصوت بشكل كسول (Lazy Loading)

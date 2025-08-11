@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import Content from "./Components/Content/Content";
 import Footer from "./Components/Footer/Footer";
-import { Routes, Route, Link } from "react-router";
+import { Routes, Route, Link } from "react-router-dom";
 import Recite from "./Pages/RecitePage/Recite";
 const App = () => {
   return (
