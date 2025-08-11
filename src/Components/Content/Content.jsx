@@ -14,15 +14,16 @@ const Content = () => {
       <div className="reciting">
         <h1>البث المباشر</h1>
         <AudioPlayer
+          className="audopl"
           autoPlay
           src="https://s34.radiolize.com/radio/8050/radio.mp3"
           onPlay={(e) => console.log("onPlay")}
           style={{
             borderRadius: 10,
             padding: 20,
-            width: 365,
             backgroundColor: "#e8e6deff",
-           }}
+            width:350
+          }}
         />
         <div className="recorded">
           <h1>التسجيلات الصوتية</h1>
