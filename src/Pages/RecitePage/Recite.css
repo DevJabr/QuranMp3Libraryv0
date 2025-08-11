@@ -83,10 +83,11 @@ li button {
 li button:hover {
   color: #d5cea3;
 }
+
 /* شاشات صغيرة جدًا أقل من 480px */
 @media (max-width: 479px) {
   .page-container {
-    width: 100%;
+    width: 100vh;
   }
   .recitations h1 {
     font-size: 30px;
@@ -193,7 +194,7 @@ li button:hover {
     width: 100%;
   }
   .recitations h1 {
-    font-size: px;
+    font-size: 55px;
   }
   .select-reciter {
     color: #d5cea3;

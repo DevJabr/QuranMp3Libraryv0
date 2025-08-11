@@ -11,6 +11,9 @@ const Recite = () => {
   const [activeSurah, setActiveSurah] = useState(null);
   const [loadingSurah, setLoadingSurah] = useState(null);
 
+  // هنا إضافة الحالة الخاصة بالعرض الجزئي
+  const [visibleCount, setVisibleCount] = useState(10);
+
   useEffect(() => {
     fetch("https://quranapi.pages.dev/api/surah.json")
       .then((response) => response.json())
@@ -30,6 +33,11 @@ const Recite = () => {
   const handleSurahClick = (index) => {
     setActiveSurah(index);
     setLoadingSurah(index);
+  };
+
+  // دالة لزيادة عدد العناصر المعروضة
+  const showMore = () => {
+    setVisibleCount((prev) => prev + 10);
   };
 
   return (
@@ -60,7 +68,7 @@ const Recite = () => {
 
         <div className="tilawat-audio">
           <ul>
-            {surahTitle.map((surah, index) => (
+            {surahTitle.slice(0, visibleCount).map((surah, index) => (
               <li key={index}>
                 <button
                   onClick={() => handleSurahClick(index)}
@@ -103,6 +111,25 @@ const Recite = () => {
               </li>
             ))}
           </ul>
+
+          {/* زر المزيد يظهر فقط لو ما زال هناك المزيد للعرض */}
+          {visibleCount < surahTitle.length && (
+            <button
+              className="morebtn"
+              onClick={showMore}
+              style={{
+                marginTop: "20px",
+                padding: "10px 20px",
+                fontSize: "1.8rem",
+                cursor: "pointer",
+                borderRadius: 1,
+                backgroundColor: "#1a120b",
+                color: "white",
+              }}
+            >
+              باقي القائمة
+            </button>
+          )}
         </div>
       </div>
     </div>

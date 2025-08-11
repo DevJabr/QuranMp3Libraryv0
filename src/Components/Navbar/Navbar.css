@@ -34,3 +34,8 @@ button {
 .fa-solid:hover {
   color: gold;
 }
+@media (max-width: 479px) {
+  .nav {
+    width: 100vh;
+  }
+}
