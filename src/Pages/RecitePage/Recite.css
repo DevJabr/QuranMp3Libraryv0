@@ -60,10 +60,11 @@
   color: #d5cea3;
   padding-top: 50px;
   font-family: "Alexandria";
-}
-.select-reciter label {
-  padding-left: 20px;
-  font-size: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
 }
 .select-reciter select {
   font-size: 25px;
@@ -82,6 +83,15 @@ li button {
 }
 li button:hover {
   color: #d5cea3;
+}
+.search-surah{
+  width: 250px;
+  height: 50px;
+  margin-right: 1rem;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 25px;
+  border:#d5cea3 solid 2px;
 }
 
 /* شاشات صغيرة جدًا أقل من 480px */

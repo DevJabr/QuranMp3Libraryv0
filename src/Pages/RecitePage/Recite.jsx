@@ -1,5 +1,4 @@
 import React, { useEffect, useState, Suspense, lazy } from "react";
-import { Routes, Route, Link } from "react-router-dom";
 import "./Recite.css";
 
 // استيراد مشغل الصوت بشكل كسول (Lazy Loading)
@@ -10,9 +9,8 @@ const Recite = () => {
   const [reciter, setReciter] = useState({ url: "", number: "" });
   const [activeSurah, setActiveSurah] = useState(null);
   const [loadingSurah, setLoadingSurah] = useState(null);
-
-  // هنا إضافة الحالة الخاصة بالعرض الجزئي
   const [visibleCount, setVisibleCount] = useState(10);
+  const [searchSurah, setSearchSurah] = useState("");
 
   useEffect(() => {
     fetch("https://quranapi.pages.dev/api/surah.json")
@@ -35,10 +33,18 @@ const Recite = () => {
     setLoadingSurah(index);
   };
 
-  // دالة لزيادة عدد العناصر المعروضة
   const showMore = () => {
     setVisibleCount((prev) => prev + 10);
   };
+
+  const handleInputChange = (e) => {
+    setSearchSurah(e.target.value);
+  };
+
+  // فلترة السور حسب البحث
+  const filteredSurahs = surahTitle.filter((surah) =>
+    surah.surahNameArabic.toLowerCase().includes(searchSurah.toLowerCase())
+  );
 
   return (
     <div className="page-container">
@@ -46,7 +52,6 @@ const Recite = () => {
         <h1>قائمة التلاوات المسجلة</h1>
 
         <div className="select-reciter">
-          <label>اختر القارئ</label>
           <select value={reciter.url} onChange={handleReciterChange}>
             <option value="" number="">
               -- اختر قارئا --
@@ -64,11 +69,19 @@ const Recite = () => {
               ناصر القطامي
             </option>
           </select>
+
+          <input
+            className="search-surah"
+            type="text"
+            placeholder="أدخل اسم السورة"
+            value={searchSurah}
+            onChange={handleInputChange}
+          />
         </div>
 
         <div className="tilawat-audio">
           <ul>
-            {surahTitle.slice(0, visibleCount).map((surah, index) => (
+            {filteredSurahs.slice(0, visibleCount).map((surah, index) => (
               <li key={index}>
                 <button
                   onClick={() => handleSurahClick(index)}
@@ -112,8 +125,7 @@ const Recite = () => {
             ))}
           </ul>
 
-          {/* زر المزيد يظهر فقط لو ما زال هناك المزيد للعرض */}
-          {visibleCount < surahTitle.length && (
+          {visibleCount < filteredSurahs.length && (
             <button
               className="morebtn"
               onClick={showMore}
